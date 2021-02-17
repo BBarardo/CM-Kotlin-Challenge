@@ -1,6 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.time.LocalDate
 import java.time.Period
@@ -25,7 +26,16 @@ class Pessoa(
     }
 
     fun pesquisarVeiculo(identificador: String): Veiculo {
-        return veiculos.filter { veiculo: Veiculo -> veiculo.identificador == identificador }[0]
+
+        veiculos.forEach { veiculo ->
+            run {
+                if (veiculo.identificador == identificador) {
+                    return veiculo
+                }
+            }
+        }
+
+        throw VeiculoNaoEncontradoException()
     }
 
     fun venderVeiculo(identificador: String, comprador: Pessoa) {

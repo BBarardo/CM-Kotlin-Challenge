@@ -1,8 +1,6 @@
 package pt.ulusofona.cm.kotlin.challenge
 
-import pt.ulusofona.cm.kotlin.challenge.models.Bicicleta
-import pt.ulusofona.cm.kotlin.challenge.models.Posicao
-import pt.ulusofona.cm.kotlin.challenge.models.Veiculo
+import pt.ulusofona.cm.kotlin.challenge.models.*
 import java.time.LocalDate
 import java.time.Period
 import java.time.ZoneId
@@ -40,9 +38,63 @@ fun main() {
     var bicicleta = Bicicleta("bike")
     println(bicicleta)
     println("carta? " + bicicleta.requerCarta())
-    bicicleta.moverPara(1,1)
-    println(bicicleta)
-    bicicleta.moverPara(1,1)
+    bicicleta.moverPara(1, 1)
+    println(bicicleta.toString())
+    try {
+        bicicleta.moverPara(1, 1)
+    } catch (e: Exception) {
+        println(e)
+    }
     println(bicicleta)
 
+    var pessoa: Pessoa = Pessoa("José Amaro", date2)
+    pessoa.tirarCarta()
+    pessoa.comprarVeiculo(bicicleta)
+    println(pessoa.temCarta())
+    println(pessoa.pesquisarVeiculo("bike"))
+
+    var pessoa2 = Pessoa("barnabé", Date())
+    try {
+        pessoa2.tirarCarta()
+    } catch (e: Exception) {
+        println(e)
+    }
+    println(pessoa2.temCarta())
+
+
+
+    println("----CARRO----")
+    var carro = Carro("car", Motor(100, 1700))
+    println(carro)
+    println(carro.estaLigado())
+    println("DESLIGAR CARRO (ERRO)")
+    try {
+        carro.desligar()
+    } catch (e: Exception) {
+        println(e)
+    }
+
+    println("LIGAR CARRO")
+    try {
+        carro.ligar()
+    } catch (e: Exception) {
+        println(e)
+    }
+    println(carro.estaLigado())
+    println("LIGAR CARRO (ERRO)")
+    try {
+        carro.ligar()
+    } catch (e: Exception) {
+        println(e)
+    }
+
+    println("----MOTOR----")
+    println(carro.motor)
+
+    println("----PESSOA MOVER VEICULO----")
+    try {
+        pessoa.moverVeiculoPara("bike",1,1)
+    }catch (e:Exception){
+        println(e)
+    }
 }

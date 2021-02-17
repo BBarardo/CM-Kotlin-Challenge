@@ -11,10 +11,4 @@ object DateFormatter {
                 "${data.get(Calendar.MONTH) + 1}-" +
                 "${data.get(Calendar.YEAR)}"
     }
-
-//    override fun toString(): String {
-//        return "${_data.get(Calendar.DATE)}-" +
-//                "${_data.get(Calendar.MONTH) + 1}-" +
-//                "${_data.get(Calendar.YEAR)}"
-//    }
 }
