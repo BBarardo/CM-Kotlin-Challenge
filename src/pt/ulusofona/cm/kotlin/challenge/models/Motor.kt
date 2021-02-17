@@ -22,6 +22,6 @@ class Motor(
     }
 
     override fun toString(): String {
-        return "${this::class.simpleName} | $cavalos | $cilindrada"
+        return "Motor | $cavalos | $cilindrada"
     }
 }

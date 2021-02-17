@@ -7,4 +7,8 @@ class Bicicleta(
     override fun requerCarta(): Boolean {
         return false
     }
+
+    override fun toString(): String {
+        return "Bicicleta | $identificador | ${DateFormatter.formatter(dataDeAquisicao)} | $posicao"
+    }
 }

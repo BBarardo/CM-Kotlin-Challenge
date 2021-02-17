@@ -20,8 +20,7 @@ open class Veiculo(
     }
 
     override fun toString(): String {
-        "$identificador | $dataDeAquisicao | $posicao"
-        return "${this::class.simpleName} | $identificador | ${DateFormatter.formatter(dataDeAquisicao)} | $posicao"
+        return "Veiculo | $identificador | ${DateFormatter.formatter(dataDeAquisicao)} | $posicao"
     }
 
 

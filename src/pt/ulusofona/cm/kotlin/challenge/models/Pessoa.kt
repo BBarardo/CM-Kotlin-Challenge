@@ -79,7 +79,7 @@ class Pessoa(
     }
 
     override fun toString(): String {
-        return "${this::class.simpleName} | $nome | ${DateFormatter.formatter(dataDeNascimento)} | $posicao"
+        return "Pessoa | $nome | ${DateFormatter.formatter(dataDeNascimento)} | $posicao"
     }
 
 

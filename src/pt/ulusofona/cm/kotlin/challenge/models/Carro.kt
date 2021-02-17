@@ -45,4 +45,7 @@ class Carro(
         }
         super.moverPara(x, y)
     }
+    override fun toString(): String {
+        return "Carro | $identificador | ${DateFormatter.formatter(dataDeAquisicao)} | $posicao"
+    }
 }
