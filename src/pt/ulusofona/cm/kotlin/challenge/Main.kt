@@ -1,13 +1,13 @@
 package pt.ulusofona.cm.kotlin.challenge
 
-import pt.ulusofona.cm.kotlin.challenge.models.Data
+import pt.ulusofona.cm.kotlin.challenge.models.Date
 import pt.ulusofona.cm.kotlin.challenge.models.Posicao
 import pt.ulusofona.cm.kotlin.challenge.models.Veiculo
 import java.util.*
 
 fun main() {
 
-    var data = Data()
+    var data = Date()
 
     var rigthNow: Calendar = Calendar.getInstance()
 

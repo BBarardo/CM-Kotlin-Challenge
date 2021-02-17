@@ -8,7 +8,7 @@ import java.time.Period
 
 class Pessoa(
     val nome: String,
-    val dataDeNascimento: Data
+    val dataDeNascimento: Date
 ) : Movimentavel {
 
     var veiculos: ArrayList<Veiculo> = ArrayList()
@@ -19,7 +19,7 @@ class Pessoa(
     fun comprarVeiculo(veiculo: Veiculo) {
         veiculos.add(veiculo)
 
-        veiculo.dataDeAquisicao = Data()
+        veiculo.dataDeAquisicao = Date()
     }
 
     fun pesquisarVeiculo(identificador: String): Veiculo {

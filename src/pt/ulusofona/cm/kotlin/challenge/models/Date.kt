@@ -2,7 +2,7 @@ package pt.ulusofona.cm.kotlin.challenge.models
 
 import java.util.*
 
-class Data() {
+class Date() {
     var _data: Calendar = Calendar.getInstance()
 
     constructor(data: Calendar) : this() {

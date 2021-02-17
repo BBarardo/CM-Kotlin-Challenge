@@ -3,16 +3,14 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
 
-open class Veiculo(
+abstract class Veiculo(
     open val identificador: String
 ) : Movimentavel {
     open var posicao: Posicao = Posicao()
-    var dataDeAquisicao: Data = Data()
+    var dataDeAquisicao: Date = Date()
 //    val requerCarta: Boolean = false
 
-    fun requerCarta(): Boolean{
-        return false
-    }
+    abstract fun requerCarta(): Boolean
 
     override fun moverPara(x: Int, y: Int) {
         posicao.alterarPosicaoPara(x, y)

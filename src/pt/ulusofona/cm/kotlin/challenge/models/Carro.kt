@@ -8,6 +8,11 @@ class Carro(
 ) : Veiculo(identificador), Ligavel {
 
     override var posicao: Posicao = Posicao(0, 0)
+
+    override fun requerCarta(): Boolean {
+        return true
+    }
+
     var ligado = false
 
 //    override fun requerCarta(): Boolean {
