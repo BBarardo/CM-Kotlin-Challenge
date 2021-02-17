@@ -1,6 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
+import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.time.LocalDate
@@ -48,6 +49,10 @@ class Pessoa(
     }
 
     fun moverVeiculoPara(identificador: String, x: Int, y: Int) {
+        if (pesquisarVeiculo(identificador).requerCarta() && calculaIdade() <= 17){
+            throw PessoaSemCartaException(nome)
+        }
+
         pesquisarVeiculo(identificador).moverPara(x, y)
     }
 
@@ -55,12 +60,15 @@ class Pessoa(
         return this::carta.isInitialized
     }
 
-    fun tirarCarta() {
-        var anos = Period.between(
+    fun calculaIdade(): Int {
+        return Period.between(
             dataDeNascimento.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
             LocalDate.now()
         ).years
-        if (anos <= 17)
+    }
+
+    fun tirarCarta() {
+        if (calculaIdade() <= 17)
             throw MenorDeIdadeException()
 
         carta = Carta()

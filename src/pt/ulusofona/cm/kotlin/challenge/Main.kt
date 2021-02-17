@@ -97,4 +97,11 @@ fun main() {
     }catch (e:Exception){
         println(e)
     }
+    println(pessoa2)
+    pessoa2.comprarVeiculo(carro)
+    try {
+        pessoa2.moverVeiculoPara("car",2,2)
+    }catch (e:Exception){
+        println(e)
+    }
 }
