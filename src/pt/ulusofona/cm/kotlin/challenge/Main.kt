@@ -2,6 +2,7 @@ package pt.ulusofona.cm.kotlin.challenge
 
 import pt.ulusofona.cm.kotlin.challenge.models.Data
 import pt.ulusofona.cm.kotlin.challenge.models.Posicao
+import pt.ulusofona.cm.kotlin.challenge.models.Veiculo
 import java.util.*
 
 fun main() {
@@ -20,4 +21,7 @@ fun main() {
     } catch (e: Exception) {
         println(e)
     }
+
+    var vei = Veiculo("adasd")
+
 }
