@@ -24,4 +24,6 @@ fun main() {
 
     var vei = Veiculo("adasd")
 
+    println(vei)
+
 }

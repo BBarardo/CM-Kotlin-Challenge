@@ -3,8 +3,8 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
 
-class Veiculo(
-    open val identificador: String,
+open class Veiculo(
+    open val identificador: String
 ) : Movimentavel {
     open var posicao: Posicao = Posicao()
     var dataDeAquisicao: Data = Data()
@@ -20,7 +20,7 @@ class Veiculo(
 
     override fun toString(): String {
         "$identificador | $dataDeAquisicao | $posicao"
-        return "${this::class} | $identificador | $dataDeAquisicao | $posicao"
+        return "${this::class.simpleName} | $identificador | $dataDeAquisicao | $posicao"
     }
 
 

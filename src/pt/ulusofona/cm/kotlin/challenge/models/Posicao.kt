@@ -16,6 +16,6 @@ class Posicao(
     }
 
     override fun toString(): String {
-        return "Posicao | x:$x | y:$y"
+        return "${this::class.simpleName} | x:$x | y:$y"
     }
 }

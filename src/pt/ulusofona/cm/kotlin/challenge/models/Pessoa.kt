@@ -56,7 +56,7 @@ class Pessoa(
     }
 
     override fun toString(): String {
-        return "${this::class} | $nome | $dataDeNascimento | $posicao"
+        return "${this::class.simpleName} | $nome | $dataDeNascimento | $posicao"
     }
 
 
