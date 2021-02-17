@@ -3,8 +3,10 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.Period
+import java.time.ZoneId
+import java.util.*
+
 
 class Pessoa(
     val nome: String,
@@ -43,20 +45,23 @@ class Pessoa(
         return this::carta.isInitialized
     }
 
-    fun tirarCarta(){
-        var birthLocalDate: LocalDate = LocalDateTime.ofInstant(dataDeNascimento._data.toInstant(),dataDeNascimento._data.timeZone.toZoneId()).toLocalDate()
-        if(Period.between(birthLocalDate, LocalDate.now()).years <= 17){
+    fun tirarCarta() {
+        var anos = Period.between(
+            dataDeNascimento.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
+            LocalDate.now()
+        ).years
+        if (anos <= 17)
             throw MenorDeIdadeException()
-        }
 
         carta = Carta()
     }
+
     override fun moverPara(x: Int, y: Int) {
         posicao.alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String {
-        return "${this::class.simpleName} | $nome | $dataDeNascimento | $posicao"
+        return "${this::class.simpleName} | $nome | ${DateFormatter.formatter(dataDeNascimento)} | $posicao"
     }
 
 

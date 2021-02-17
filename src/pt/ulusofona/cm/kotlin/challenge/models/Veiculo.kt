@@ -1,6 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
+import java.util.*
 
 
 open class Veiculo(
@@ -10,7 +11,7 @@ open class Veiculo(
     var dataDeAquisicao: Date = Date()
 //    val requerCarta: Boolean = false
 
-    open fun requerCarta(): Boolean{
+    open fun requerCarta(): Boolean {
         return false
     }
 
