@@ -1,5 +1,6 @@
 package pt.ulusofona.cm.kotlin.challenge
 
+import pt.ulusofona.cm.kotlin.challenge.models.Bicicleta
 import pt.ulusofona.cm.kotlin.challenge.models.Posicao
 import pt.ulusofona.cm.kotlin.challenge.models.Veiculo
 import java.time.LocalDate
@@ -33,5 +34,15 @@ fun main() {
 
     var anos = Period.between(date2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), LocalDate.now()).years
     println("anos = ${anos}")
+
+
+    println("----BICICLETA----")
+    var bicicleta = Bicicleta("bike")
+    println(bicicleta)
+    println("carta? " + bicicleta.requerCarta())
+    bicicleta.moverPara(1,1)
+    println(bicicleta)
+    bicicleta.moverPara(1,1)
+    println(bicicleta)
 
 }
